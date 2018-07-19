@@ -23,11 +23,15 @@ function register_rest_endpoints(){
 	$version = '1';
 	$namespace = WPINFO_TEXT_DOMAIN.'/v/'.$version;
 
+	$name_space = function ( $function ) {
+		return __NAMESPACE__ . "\\$function";
+	};
+
 	register_rest_route( $namespace, 'server', array(
 		array(
 			'methods'               => \WP_REST_Server::READABLE,
-			'callback'              => 'WPInfomate\Rest\get_server_info', // Set to our renamed 'get' callback function
-			'permission_callback'   => 'WPInfomate\Rest\admin_permissions_check',
+			'callback'              => $name_space( 'get_server_info' ), // Set to our renamed 'get' callback function
+			'permission_callback'   => $name_space( 'admin_permissions_check' ),
 			'args'                  => array(),
 		),
 	) );
@@ -35,8 +39,8 @@ function register_rest_endpoints(){
 	register_rest_route( $namespace, 'wpinfo', array(
 		array(
 			'methods'               => \WP_REST_Server::READABLE,
-			'callback'              => 'WPInfomate\Rest\get_wp_info', // Set to our renamed 'get' callback function
-			'permission_callback'   => 'WPInfomate\Rest\admin_permissions_check',
+			'callback'              => $name_space( 'get_wp_info' ), // Set to our renamed 'get' callback function
+			'permission_callback'   => $name_space( 'admin_permissions_check' ),
 			'args'                  => array(),
 		),
 	) );
