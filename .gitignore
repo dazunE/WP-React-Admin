@@ -1,0 +1,8 @@
+# This items dose not required in productions
+node_modules
+package-lock.json
+yarn.lock
+
+
+
+
