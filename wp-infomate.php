@@ -17,7 +17,7 @@ define( 'WPINFO_VERSION', '1.0.0' );
 define( 'WPINFO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'WPINFO_PLUGIN_PATH', dirname( __FILE__ ) . '/' );
 define( 'WPINFO_PLUGIN_INC', WPINFO_PLUGIN_PATH . 'inc/' );
-define( 'WPINFO_TEXT_DOMAIN', 'wp-infomate');
+define( 'WPINFO_TEXT_DOMAIN', 'wp-infomate' );
 
 // Abort the direct access
 
